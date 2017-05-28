@@ -40,7 +40,7 @@ restService.post('/hook', function (req, res) {
             var dataIntent = requestBody.result.parameters.PVoutputParameter;
             var speech = "";
             for (var i = 0; i < dataIntent.length; i++) {
-                speech += PVmessagesDict[i];
+                speech += PVmessagesDict[dataIntent[i]];
             }
 
             return res.json({
