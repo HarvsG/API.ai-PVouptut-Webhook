@@ -11,8 +11,11 @@ restService.post('/hook', function (req, res) {
 
     console.log('hook request');
 
+
     try {
         var speech = 'empty speech';
+
+
 
         if (req.body) {
             var requestBody = req.body;
@@ -32,10 +35,10 @@ restService.post('/hook', function (req, res) {
         }
 
         console.log('result: ', speech);
-
+        var PVoutput = restService.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi')
         return res.json({
-            speech: 'webhook worked!',
-            displayText: 'webhook worked! text',
+            speech: PVoutput,
+            displayText: PVoutput,
             source: 'apiai-webhook-sample'
         });
     } catch (err) {
