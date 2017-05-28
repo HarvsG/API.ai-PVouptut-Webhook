@@ -1,0 +1,40 @@
+{
+  "id": "ea0610cd-ff69-49f7-96d2-e1bd2a9c24f1",
+  "timestamp": "2017-05-28T09:29:37.62Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "how much solar have we generated today",
+    "action": "fetch.info",
+    "actionIncomplete": false,
+    "parameters": {
+      "object": "solar panels",
+      "PVoutputParamenter": "energy",
+      "timePeriod": "today"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "21aed66a-d302-48f0-bbf4-5c403f3013ff",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 26,
+      "intentName": "getInfo"
+    },
+    "fulfillment": {
+      "speech": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: Webhook response was empty."
+  },
+  "sessionId": "52e0d4a3-3770-4bce-a0a7-d8f9cfff7344"
+}
