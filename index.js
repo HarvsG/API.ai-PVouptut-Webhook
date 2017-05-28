@@ -13,28 +13,10 @@ restService.post('/hook', function (req, res) {
 
 
     try {
-        var speech = 'empty speech';
-
-
 
         if (req.body) {
             var requestBody = req.body;
-
-            if (false) {
-                speech = '';
-
-                if (requestBody.result.fulfillment) {
-                    speech += requestBody.result.fulfillment.speech;
-                    speech += ' ';
-                }
-
-                if (requestBody.result.action) {
-                    speech += 'action: ' + requestBody.result.action;
-                }
-            }
         }
-
-        console.log('result: ', speech);
 
         https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi', function(PVres) {
           PVres.setEncoding('utf8');
@@ -46,11 +28,11 @@ restService.post('/hook', function (req, res) {
             PVdict.power = PVoutput[3];
             PVdict.effeciency = PVoutput[6];
 
-            var dataIntent = requestBody.result.paramenters.PVoutputParamenter;
+            var dataIntent = requestBody.result.parameters.PVoutputParameter;
             return res.json({
                 speech: "The current " + dataIntent + " output is " + PVdict[dataIntent] + " kilowatts",
                 displayText: PVdict.power + "kW, " + PVdict.energy + "kWh today,",
-                source: 'apiai-webhook-sample'
+                source: 'pvoutput-via-apiai-webhook-sample'
             });
           });
       });
