@@ -17,7 +17,7 @@ restService.post('/hook', function (req, res) {
 
 
 
-        if (req.body) {
+        if (false) {
             var requestBody = req.body;
 
             if (requestBody.result) {
@@ -35,11 +35,13 @@ restService.post('/hook', function (req, res) {
         }
 
         console.log('result: ', speech);
-        var PVoutput = restService.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi')
-        return res.json({
-            speech: PVoutput,
-            displayText: PVoutput,
-            source: 'apiai-webhook-sample'
+
+        restService.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi', function (PVresponse){
+            return res.json({
+                speech: PVresponse,
+                displayText: PVresponse,
+                source: 'apiai-webhook-sample'
+        });
         });
     } catch (err) {
         console.error("Can't process request", err);
