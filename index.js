@@ -27,14 +27,14 @@ restService.post('/hook', function (req, res) {
             PVdict.time = PVoutput[1];
             PVdict.energy = PVoutput[2];
             PVdict.power = PVoutput[3];
-            PVdict.effeciency = PVoutput[6];
+            PVdict.effeciency = (PVoutput[6]*100).toString();
 
             PVmessagesDict = {
                 "date":"",
                 "time":"",
                 "energy": PVdict.energy + " watt hours have been produced so far today",
                 "power":"The current power output is " + PVdict.power + " watts",
-                "effeciency":"The current normalised output is " + PVdict.effeciency};
+                "effeciency":"The solar array is currently outputting at  " + PVdict.effeciency + " percent of capacity"};
 
             var dataIntent = requestBody.result.parameters.PVoutputParameter;
             return res.json({
