@@ -30,6 +30,7 @@ restService.post('/hook', function (req, res) {
             PVdict.efficiency = (PVoutput[6]*100).toString();
 
             PVmessagesDict = {
+                "":"I am sorry please ask again but specify if you want information about power, energy or efficiency",
                 "date":"",
                 "time":"",
                 "energy": PVdict.energy + " watt hours have been produced so far today",
