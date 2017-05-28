@@ -37,9 +37,14 @@ restService.post('/hook', function (req, res) {
                 "power":"The current power output is " + PVdict.power + " kilowatts",
                 "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity"};
 
-            var dataIntent = requestBody.result.parameters.PVoutputParameter;
+            var dataIntent = requestBody.result.parameters.PVoutputParameter.split(',');
+            var speech = "";
+            for (var i = 0; i < dataIntent.length; i++) {
+                speech += PVmessagesDict[dataIntent];
+            }
+
             return res.json({
-                speech: PVmessagesDict[dataIntent],
+                speech: speech,
                 displayText: PVdict.power + "kW, " + PVdict.energy + " kWh today",
                 source: 'pvoutput-via-apiai-webhook-sample'
             });
