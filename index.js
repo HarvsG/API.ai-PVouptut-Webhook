@@ -30,7 +30,7 @@ restService.post('/hook', function (req, res) {
 
             var dataIntent = requestBody.result.parameters.PVoutputParameter;
             return res.json({
-                speech: "The current " + dataIntent + " output is " + PVdict[dataIntent] + " kilowatts",
+                speech: "The current " + dataIntent + " output is " + PVdict[dataIntent] + " watts",
                 displayText: PVdict.power + "kW, " + PVdict.energy + "kWh today,",
                 source: 'pvoutput-via-apiai-webhook-sample'
             });
