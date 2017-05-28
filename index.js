@@ -19,7 +19,7 @@ restService.post('/hook', function (req, res) {
             var requestBody = req.body;
         }
 
-        https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi', function(PVres) {
+        https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid='+requestBody.result.parameters.SID+'&key='+requestBody.result.parameters.readOnlyAPIKey, function(PVres) {
           PVres.setEncoding('utf8');
           PVres.on('data', function(chunk) {
             var PVoutput = chunk.split(',');
