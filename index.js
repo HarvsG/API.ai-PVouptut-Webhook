@@ -9,6 +9,7 @@ restService.use(bodyParser.json());
 
 restService.post('/hook', function (req, res) {
     var PVdict = {"date":"","time":"","energy":"","power":"","effeciency":""};
+    var PVmessagesDict = {};
     console.log('hook request');
 
 
@@ -28,10 +29,17 @@ restService.post('/hook', function (req, res) {
             PVdict.power = PVoutput[3];
             PVdict.effeciency = PVoutput[6];
 
+            PVmessagesDict = {
+                "date":"",
+                "time":"",
+                "energy": PVdict.energy + " watt hours have been produced so far today",
+                "power":"The current power output is " + PVdict.power + " watts",
+                "effeciency":"The current normalised output is " + PVdict.effeciency};
+
             var dataIntent = requestBody.result.parameters.PVoutputParameter;
             return res.json({
-                speech: "The current " + dataIntent + " output is " + PVdict[dataIntent] + " watts",
-                displayText: PVdict.power + "kW, " + PVdict.energy + "kWh today,",
+                speech: PVmessagesDict[dataIntent],
+                displayText: PVdict.power + "kW, " + PVdict.energy + " kWh today",
                 source: 'pvoutput-via-apiai-webhook-sample'
             });
           });
