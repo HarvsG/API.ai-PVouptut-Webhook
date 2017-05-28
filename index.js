@@ -51,11 +51,10 @@ restService.post('/hook', function (req, res) {
                 speech: "The current " + dataIntent + " output is " + PVdict[dataIntent] + " kilowatts",
                 displayText: PVdict.power + "kW, " + PVdict.energy + "kWh today,",
                 source: 'apiai-webhook-sample'
-        });
+            });
           });
-        })
+      });
 
-        });
     } catch (err) {
         console.error("Can't process request", err);
 
