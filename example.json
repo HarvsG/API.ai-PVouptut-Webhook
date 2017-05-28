@@ -9,7 +9,7 @@
     "actionIncomplete": false,
     "parameters": {
       "object": "solar panels",
-      "PVoutputParamenter": "energy",
+      "PVoutputParameter": "energy",
       "timePeriod": "today"
     },
     "contexts": [],
