@@ -1,7 +1,7 @@
 {
-  "name": "API.AI webhook demonstration",
-  "description": "API.AI webhook demonstration",
-  "repository": "https://github.com/api-ai/apiai-webhook-sample",
+  "name": "API.ai PVouptut Webhook",
+  "description": "A webhook to allow an API.ai app to get information for the PVoutput API",
+  "repository": "https://github.com/HarvsG/API.ai-PVouptut-Webhook",
   "logo": "http://xvir.github.io/img/apiai.png",
-  "keywords": ["api.ai", "natural language"]
+  "keywords": ["api.ai", "natural language","PVoutput","Webhook"]
 }
