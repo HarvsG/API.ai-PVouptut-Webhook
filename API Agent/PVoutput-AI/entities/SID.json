@@ -1,0 +1,16 @@
+{
+  "id": "a07216ce-d545-4078-b91e-667d27d94b1c",
+  "name": "SID",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "@sys.number-sequence:SID",
+      "synonyms": [
+        "50030",
+        "fifty thousand and thirty"
+      ]
+    }
+  ],
+  "isEnum": true,
+  "automatedExpansion": false
+}

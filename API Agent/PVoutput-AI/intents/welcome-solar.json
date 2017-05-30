@@ -1,0 +1,121 @@
+{
+  "userSays": [
+    {
+      "id": "075e1cc2-61fe-4b90-9ab3-4e27d9315533",
+      "data": [
+        {
+          "text": "Can you help me?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "15ff817c-b3a4-4415-888b-5a282a558f40",
+      "data": [
+        {
+          "text": "Hello!"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "89707b59-17dc-495b-9055-a9bbce771eae",
+      "data": [
+        {
+          "text": "Do you have any information on the "
+        },
+        {
+          "text": "solar",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "097692cb-bf28-4c05-b379-a686af27f8eb",
+      "data": [
+        {
+          "text": "Tell me about the "
+        },
+        {
+          "text": "array",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5382c387-676c-4a7b-b180-50d94a652150",
+      "data": [
+        {
+          "text": "Can you tell me about "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "cb96f684-7eee-4b9c-8249-a62d6567202f",
+  "name": "welcome-solar",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "solar",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "SID-key-required",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "ReadOnlyKey-required",
+          "parameters": {},
+          "lifespan": 99
+        }
+      ],
+      "parameters": [
+        {
+          "dataType": "@object",
+          "name": "object",
+          "value": "$object",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Hello! Before I can help you I will need to know your system identification number."
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ]
+}

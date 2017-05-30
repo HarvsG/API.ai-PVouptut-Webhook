@@ -1,0 +1,258 @@
+{
+  "userSays": [
+    {
+      "id": "671d0682-a784-42a4-8c43-b22506425dfc",
+      "data": [
+        {
+          "text": "Ok its @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "6da17634-ebdd-48b8-a607-ab96c2c8d453",
+      "data": [
+        {
+          "text": "Ok it\u0027s @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 1
+    },
+    {
+      "id": "dc0f3549-d95b-4a57-b8df-1068d1a34177",
+      "data": [
+        {
+          "text": "My system ID number is "
+        },
+        {
+          "text": "65421",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "843add65-27ed-4834-a28f-b2d7f002699d",
+      "data": [
+        {
+          "text": "My system ID number is @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "d0d739a5-dcda-4859-913e-2532b1eaf033",
+      "data": [
+        {
+          "text": "The identification number of my solar array is @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "7257f9e4-dda0-44c8-856b-00c523b179f9",
+      "data": [
+        {
+          "text": "My system identification number is @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "a2afe879-5660-497d-b793-07ebb04a9dc9",
+      "data": [
+        {
+          "text": "My SID is @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "9ebbd3cb-082e-40c8-83b3-cb9ce666494d",
+      "data": [
+        {
+          "text": "My identification number is @SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "e91b42d8-eb96-4736-b22e-0b7f2237648a",
+      "data": [
+        {
+          "text": "@SID:SID"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "88786f19-be3a-4c62-a1eb-4816a7c89bc4",
+      "data": [
+        {
+          "text": "43392",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f98c9fb4-0ba6-4946-bd56-0b5c237ce7c3",
+      "data": [
+        {
+          "text": "65234",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d4b1ea11-d729-41c9-afad-c9490f18f391",
+      "data": [
+        {
+          "text": "10023",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "002599c2-995a-4f53-9a51-e646db2c09c7",
+      "data": [
+        {
+          "text": "The identification number of my "
+        },
+        {
+          "text": "solar array",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " is "
+        },
+        {
+          "text": "67982",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c3e17458-7dcb-48c5-8d77-c408f109aefc",
+      "data": [
+        {
+          "text": "My system identification number is "
+        },
+        {
+          "text": "44392",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d9366a94-35c3-4e6e-b562-3b5e95b43c7e",
+      "data": [
+        {
+          "text": "My system ID is "
+        },
+        {
+          "text": "50492",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d350f4aa-65d9-47a9-a26b-1c15826a347b",
+      "data": [
+        {
+          "text": "My SID is "
+        },
+        {
+          "text": "43392",
+          "alias": "SID",
+          "meta": "@SID",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "045eb2ce-57df-45e6-8608-4c37338f0c7c",
+  "name": "give-SID",
+  "auto": true,
+  "contexts": [
+    "SID-key-required"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "give-SID-followup",
+          "parameters": {},
+          "lifespan": 7
+        },
+        {
+          "name": "SID-key-required",
+          "parameters": {},
+          "lifespan": 99
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@SID",
+          "name": "SID",
+          "value": "$SID",
+          "prompts": [
+            "Sorry I didn\u0027t catch that, I need your five digit system identification number."
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Thank you, I heard that as $SID.SID . Does that sound right?"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

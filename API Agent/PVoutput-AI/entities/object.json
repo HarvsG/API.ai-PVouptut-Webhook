@@ -1,0 +1,30 @@
+{
+  "id": "126acb61-62f7-4a00-aa87-c1aad5643e1b",
+  "name": "object",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "solar panels",
+      "synonyms": [
+        "solar panels",
+        "PV",
+        "solar array",
+        "array",
+        "photovoltaics",
+        "photovoltaic",
+        "panels",
+        "solar",
+        "the solar panels",
+        "P.V",
+        "P.V Panels",
+        "pv panels",
+        "P V panel",
+        "P V panels",
+        "PV array",
+        "photovoltaic array"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}

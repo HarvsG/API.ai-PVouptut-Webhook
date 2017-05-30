@@ -1,0 +1,191 @@
+{
+  "userSays": [
+    {
+      "id": "897936c8-5ab8-4171-869f-ccb444bbd7f8",
+      "data": [
+        {
+          "text": "not even close"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "874c48ea-4d5b-4d75-a9d7-c35a612fc3f7",
+      "data": [
+        {
+          "text": "nowhere near"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6a985737-501a-4d8f-9ed9-53ec957e81e2",
+      "data": [
+        {
+          "text": "not quite"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "91a70737-38dd-4d80-9cc3-7e0385c6820f",
+      "data": [
+        {
+          "text": "that\u0027s wrong"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "cd451179-34c5-437e-a324-1d17c2b3d3c6",
+      "data": [
+        {
+          "text": "nope"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a01ffe5f-4a6e-4144-a8e4-f3bb0f0115fb",
+      "data": [
+        {
+          "text": "no"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f754930c-a1d0-4b64-ae4a-6efd989ffee6",
+      "data": [
+        {
+          "text": "don\u0027t do it"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c0328fcf-b9be-4b9b-a1ed-5b34cfc119be",
+      "data": [
+        {
+          "text": "definitely not"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "25593e7e-9b8b-414d-8e80-92dd6619247f",
+      "data": [
+        {
+          "text": "not really"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "535290b3-88f1-4a4b-9f23-3ca42ea0e040",
+      "data": [
+        {
+          "text": "thanks but no"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3a643634-9cbf-4ac8-b813-c555e04a8cbd",
+      "data": [
+        {
+          "text": "not interested"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f6b6920e-668b-4982-9651-1dd2b3213f88",
+      "data": [
+        {
+          "text": "I don\u0027t think so"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "bece4ee1-da70-4ef2-a67f-6a853fa125e9",
+      "data": [
+        {
+          "text": "I disagree"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a48131d9-68d7-4328-bb5e-b612b249cc0d",
+      "data": [
+        {
+          "text": "I don\u0027t want that"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "79ab39de-b909-4af8-bcf0-12feb05b4e5b",
+  "parentId": "b1c1d48d-201e-4195-a1b4-ca780d479248",
+  "rootParentId": "b1c1d48d-201e-4195-a1b4-ca780d479248",
+  "name": "give-ReadOnlyAPIKey - no",
+  "auto": true,
+  "contexts": [
+    "give-ReadOnlyAPIKey-followup",
+    "ReadOnlyKey-required"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "give-ReadOnlyAPIKey.give-ReadOnlyAPIKey-no",
+      "affectedContexts": [
+        {
+          "name": "ReadOnlyKey-required",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "ReadOnlyAPIKey-given",
+          "parameters": {},
+          "lifespan": 0
+        },
+        {
+          "name": "give-ReadOnlyAPIKey-followup",
+          "parameters": {},
+          "lifespan": 0
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "OK, try me again.",
+            "OK, say it again and I will listen harder this time."
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

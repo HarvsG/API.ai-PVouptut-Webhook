@@ -1,0 +1,117 @@
+{
+  "userSays": [
+    {
+      "id": "99174745-8363-411b-96c7-5e9bb39c01d8",
+      "data": [
+        {
+          "text": "No"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "8e164583-d203-42c4-94da-c054efc2f4bf",
+      "data": [
+        {
+          "text": "See ya"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ab305d54-c1c1-4b4d-97eb-34a5974a15e9",
+      "data": [
+        {
+          "text": "Thank you very much"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "44afcb80-e095-4051-b1f8-e7fe199d5033",
+      "data": [
+        {
+          "text": "Thank you"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6143499a-f6a5-4280-9530-f43da2256918",
+      "data": [
+        {
+          "text": "I\u0027m done now"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "66e9915e-a6f8-4463-bb39-505f78db198d",
+      "data": [
+        {
+          "text": "Bye"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b46c4ed0-6b72-407b-bb80-402511c65039",
+      "data": [
+        {
+          "text": "Thanks for that"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5162e00e-5b8a-4ed9-8e3d-581088d13943",
+      "data": [
+        {
+          "text": "Nevermind"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "548e3d4d-aa17-4254-951a-83d0aa7dfc1d",
+  "name": "quit",
+  "auto": true,
+  "contexts": [
+    "information-given"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "quit-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Glad I could help! Can I help you with anything else?",
+            "Happy to help, would you like to know anything else?"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

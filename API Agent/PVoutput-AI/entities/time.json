@@ -1,0 +1,15 @@
+{
+  "id": "ea1adbbc-0476-483b-bbab-e119823255ed",
+  "name": "time",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "@sys.date-time:time",
+      "synonyms": [
+        "@sys."
+      ]
+    }
+  ],
+  "isEnum": true,
+  "automatedExpansion": false
+}

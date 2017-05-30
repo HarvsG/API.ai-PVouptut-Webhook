@@ -1,0 +1,239 @@
+{
+  "userSays": [
+    {
+      "id": "f115d225-18c3-4242-b791-7b82cfbe5b3a",
+      "data": [
+        {
+          "text": "My read only API Key is @sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "ca5d81e1-b563-40fa-a1e0-1c7f59789df8",
+      "data": [
+        {
+          "text": "yes, @sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "93207bb6-116b-4e7d-8e8f-145d46c197ea",
+      "data": [
+        {
+          "text": "OK, it\u0027s @sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "83056de2-e7ce-44cc-938f-46a7216771a5",
+      "data": [
+        {
+          "text": "yes, my key is @sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "08d824ab-7d24-44ec-8a73-036396817fa4",
+      "data": [
+        {
+          "text": "@sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "512cd680-1a88-4756-b48b-b478dfedead5",
+      "data": [
+        {
+          "text": "My API Key is @sys.any:readOnlyAPIKey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "897ca529-a3ad-4c07-824a-e9ea52e46108",
+      "data": [
+        {
+          "text": "My read only API key is "
+        },
+        {
+          "text": "34442hsjdpods",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "91fed9d4-c70f-4e88-abda-02e1dff96402",
+      "data": [
+        {
+          "text": "Yup, "
+        },
+        {
+          "text": "4ffj223448fj",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9e04df9a-04f7-45dc-942d-6132053c667d",
+      "data": [
+        {
+          "text": "OK it is "
+        },
+        {
+          "text": "12333212344",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4ca3dcc1-9b0c-4c5f-8552-ac0ba9bbe443",
+      "data": [
+        {
+          "text": "Ok its "
+        },
+        {
+          "text": "444555228",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4062ba6b-41ba-42b4-b082-9402027b96e3",
+      "data": [
+        {
+          "text": "Ok, its "
+        },
+        {
+          "text": "haroldmason6",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d73be4a5-2d8b-4c57-a009-25600ba8851d",
+      "data": [
+        {
+          "text": "Ok, my key is "
+        },
+        {
+          "text": "23444253",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6a6b4725-1efd-4c51-8e0b-45387c0b4e92",
+      "data": [
+        {
+          "text": "My Key is "
+        },
+        {
+          "text": "6444423566",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9bb54c55-257b-4fd5-acb2-d0a221cd0277",
+      "data": [
+        {
+          "text": "My API Key is "
+        },
+        {
+          "text": "solarharvey9kwapi",
+          "alias": "readOnlyAPIKey",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "b1c1d48d-201e-4195-a1b4-ca780d479248",
+  "name": "give-ReadOnlyAPIKey",
+  "auto": true,
+  "contexts": [
+    "SID-key-given",
+    "ReadOnlyKey-required"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "ReadOnlyKey-required",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "give-ReadOnlyAPIKey-followup",
+          "parameters": {},
+          "lifespan": 7
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "readOnlyAPIKey",
+          "value": "$readOnlyAPIKey",
+          "prompts": [
+            "Sorry I didn\u0027t quite get that. I need your read only API key. It needs to be in a format I can understand"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Thank you, I got that as $readOnlyAPIKey, does that sound right?"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

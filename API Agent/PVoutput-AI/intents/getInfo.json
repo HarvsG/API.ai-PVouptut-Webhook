@@ -1,0 +1,426 @@
+{
+  "userSays": [
+    {
+      "id": "e9fbf1fd-b4da-4be2-8cdd-2946a8165d1f",
+      "data": [
+        {
+          "text": "How much are "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "producing",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "right now",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "716b2df3-0e0c-4e59-9892-f5406c39f80c",
+      "data": [
+        {
+          "text": "How much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " have we "
+        },
+        {
+          "text": "produced",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "this month",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "451f01bc-b64e-4310-9ba1-d17d906eedae",
+      "data": [
+        {
+          "text": "How much did "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "produce",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "yesterday",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "afdd537d-2ffa-4ee7-9c55-c5dba11089bf",
+      "data": [
+        {
+          "text": "How much did we "
+        },
+        {
+          "text": "produce",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "last week",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f695aea0-58c6-4877-87d6-5426d309f85b",
+      "data": [
+        {
+          "text": "What is the "
+        },
+        {
+          "text": "current",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "efficiency",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " of "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "88a19080-0fbc-4bf8-9baf-9bd6112ed711",
+      "data": [
+        {
+          "text": "How much have "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "produced",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "today",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b0bbf6b1-3a38-40fe-a032-86bd73b6b6c2",
+      "data": [
+        {
+          "text": "What "
+        },
+        {
+          "text": "efficiency",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " are "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "currently",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": " running at"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5137ba5c-2b8a-43bf-83a4-5c528b3aee2f",
+      "data": [
+        {
+          "text": "How much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " have we "
+        },
+        {
+          "text": "produced",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "today",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f11fea9b-7988-4ea1-82a8-d3787f8f4a65",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " are "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "producing",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "right now",
+          "alias": "time",
+          "meta": "@time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "21aed66a-d302-48f0-bbf4-5c403f3013ff",
+  "name": "getInfo",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "fetch.info",
+      "affectedContexts": [
+        {
+          "name": "information-given",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "solar",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "array-information-given",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "SID-key-given",
+          "parameters": {},
+          "lifespan": 99
+        },
+        {
+          "name": "ReadOnlyAPIKey-given",
+          "parameters": {},
+          "lifespan": 99
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@PVoutputParameter",
+          "name": "PVoutputParameter",
+          "value": "$PVoutputParameter",
+          "prompts": [
+            "Sorry, I didn\u0027t quite catch that, would you like to know about power, energy or efficiency?",
+            "Sorry was that power, energy or efficiency you were talking about?"
+          ],
+          "isList": true
+        },
+        {
+          "dataType": "@object",
+          "name": "object",
+          "value": "$object",
+          "prompts": [],
+          "defaultValue": "solar",
+          "isList": false
+        },
+        {
+          "dataType": "@time",
+          "name": "time",
+          "value": "$time",
+          "isList": false
+        },
+        {
+          "name": "my_action",
+          "value": "fetch.info"
+        },
+        {
+          "required": true,
+          "dataType": "@SID",
+          "name": "SID",
+          "value": "$SID",
+          "prompts": [
+            "What is your system identification number?",
+            "Please can I have your 5 digit system identification number?"
+          ],
+          "defaultValue": "#SID-key-given.SID"
+        },
+        {
+          "required": true,
+          "dataType": "@readOnlyAPIKey",
+          "name": "readOnlyAPIKey",
+          "value": "$readOnlyAPIKey",
+          "prompts": [
+            "What is you read only API key?",
+            "Please may I have your read only API Key?"
+          ],
+          "defaultValue": "#ReadOnlyAPIKey-given.readOnlyAPIKey"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "I\u0027m sorry, I could not reach the server"
+        }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
+      ]
+    }
+  ],
+  "priority": 750000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

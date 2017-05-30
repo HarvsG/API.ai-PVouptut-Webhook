@@ -1,0 +1,15 @@
+{
+  "id": "85f47514-8b7e-4324-af4e-a2eb753f668e",
+  "name": "readOnlyAPIKey",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "@sys.number-sequence:APIKey",
+      "synonyms": [
+        "@sys.number-sequence:APIKey"
+      ]
+    }
+  ],
+  "isEnum": true,
+  "automatedExpansion": false
+}

@@ -1,0 +1,104 @@
+{
+  "userSays": [
+    {
+      "id": "3ab59cf0-5232-4be3-9b18-11748cc598c0",
+      "data": [
+        {
+          "text": "What information do you know"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "94878241-814a-40fd-a6f5-6970203e3e4b",
+      "data": [
+        {
+          "text": "How can you help me"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "90cadf1e-c18f-43b7-89f9-996c3ecc73cf",
+      "data": [
+        {
+          "text": "Help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7ded8124-084b-4088-832d-30864de77a3c",
+      "data": [
+        {
+          "text": "How do you work"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c3129cdc-b5d2-49da-ac5c-46640b6c5295",
+      "data": [
+        {
+          "text": "What can you tell me"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2872388c-1340-4072-9d43-978285ffe0e9",
+      "data": [
+        {
+          "text": "How do I use you"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5e47dfce-5c90-4157-a9e9-37b39afe7858",
+      "data": [
+        {
+          "text": "What can you do"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "fce7bed5-4728-4d62-ba73-7aa051da7c6c",
+  "name": "help",
+  "auto": true,
+  "contexts": [
+    "solar"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "solar",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Hi, I can tell you about power, energy production or efficiency of the solar array."
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

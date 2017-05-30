@@ -1,0 +1,40 @@
+{
+  "description": "Api for Google Pi Project",
+  "language": "en",
+  "enabledDomainFeatures": [
+    "smalltalk-domain-new"
+  ],
+  "googleAssistant": {
+    "googleAssistantCompatible": true,
+    "welcomeIntentSignInRequired": false,
+    "startIntents": [
+      {
+        "intentId": "21aed66a-d302-48f0-bbf4-5c403f3013ff",
+        "signInRequired": false
+      }
+    ],
+    "systemIntents": [],
+    "endIntentIds": [
+      "15619d6b-cb9e-4920-8fbb-396d5218e340"
+    ],
+    "oAuthLinking": {
+      "required": false,
+      "grantType": "AUTH_CODE_GRANT"
+    },
+    "voiceType": "MALE_1",
+    "capabilities": [],
+    "protocolVersion": "V2"
+  },
+  "defaultTimezone": "Europe/Madrid",
+  "webhook": {
+    "url": "https://simple-demo-webhook.herokuapp.com/hook",
+    "headers": {
+      "": ""
+    },
+    "available": true,
+    "useForDomains": true
+  },
+  "isPrivate": true,
+  "customClassifierMode": "use.instead",
+  "mlMinConfidence": 0.3
+}

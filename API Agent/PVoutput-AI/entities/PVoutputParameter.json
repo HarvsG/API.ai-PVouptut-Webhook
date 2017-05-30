@@ -1,0 +1,42 @@
+{
+  "id": "2c3509ab-5d51-431b-9851-5f6359144bba",
+  "name": "PVoutputParameter",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "power",
+      "synonyms": [
+        "power",
+        "generating",
+        "currently generating",
+        "kilowatt",
+        "power is being generated",
+        "power are we generating",
+        "producing",
+        "being generated",
+        "outputting",
+        "putting out"
+      ]
+    },
+    {
+      "value": "energy",
+      "synonyms": [
+        "energy",
+        "kilowatt hour",
+        "generated",
+        "have we generated",
+        "produced",
+        "produce"
+      ]
+    },
+    {
+      "value": "efficiency",
+      "synonyms": [
+        "efficiency",
+        "percentage"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}
