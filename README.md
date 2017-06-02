@@ -1,6 +1,6 @@
 # API.ai PVouptut Webhook.
 
-This is a really simple webhook implementation that gets recieves querries from api.ai and requests information from the PVoutput API
+This is a really simple webhook implementation that recieves querries from api.ai and requests information from the PVoutput API
 
 ## Deploy your own copy to Heroku:
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
