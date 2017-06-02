@@ -4,8 +4,7 @@
   "description": "A webhook to allow an API.ai app to get information for the PVoutput API",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "George Harvey <ghjpharvey@gmail.com> (https://api.ai)",
   "license": "Apache 2.0",
