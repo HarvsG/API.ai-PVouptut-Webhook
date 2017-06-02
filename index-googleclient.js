@@ -3,6 +3,7 @@
 
 process.env.DEBUG = 'actions-on-google:*';
 const ApiAiApp = require('actions-on-google').ApiAiApp;
+const https = require('https');
 
 // API.AI actions
 const UNRECOGNIZED_DEEP_LINK = 'deeplink.unknown';
@@ -49,13 +50,39 @@ exports.PVoutputFullfilment = (request, response) => {
   }
   
   function fetchInfo (app){
-    app.ask('Welcome to number echo! Say a number.');
-  }
+    var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
+    var PVmessagesDict = {};
+    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid='+requestBody.result.parameters.SID+'&key='+requestBody.result.parameters.readOnlyAPIKey, function(PVres){
+      PVres.setEncoding('utf8');
+      PVres.on('data', function(chunk) {
+        let PVoutput = chunk.split(',');
+        PVdict.date = PVoutput[0];
+        PVdict.time = PVoutput[1];
+        PVdict.energy = (PVoutput[2]/1000).toString();
+        PVdict.power = (PVoutput[3]/1000).toString();
+        PVdict.efficiency = (PVoutput[6]*100).toString();
+
+        PVmessagesDict = {
+            "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
+            "date":"",
+            "time":"",
+            "energy": PVdict.energy + " kilowatt hours have been produced so far today. ",
+            "power":"The current power output is " + PVdict.power + " kilowatts. ",
+            "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
+
+        var dataIntent = requestBody.result.parameters.PVoutputParameter;
+        var speech = "";
+        for (var i = 0; i < dataIntent.length; i++) {
+            speech += PVmessagesDict[dataIntent[i]];
+        }
+        app.ask(speech);
+      })
+    })
   
   let actionMap = new Map();
   actionMap.set(UNRECOGNIZED_DEEP_LINK, unrecognised);
   actionMap.set(FETCH_INFO, fetchInfo);
   
   app.handleRequest(actionMap);
+  }
 }
-
