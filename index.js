@@ -51,11 +51,15 @@ exports.PVoutputFullfilment = (request, response) => {
   }
 
   function handler (app){
+    let defaultOptions = {
+      hostname: 'pvoutput.org',
+      path: '/service/r2/getstatus.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey
+    }
 
-    function fetchInfo (app, service, d="", t="", df="", dt="" ){
+    function fetchInfo (app, options){
       var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
       var PVmessagesDict = {};
-      https.get('https://pvoutput.org/service/r2/'+service+'.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey, function(PVres){
+      https.get(options, function(PVres){
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
           let PVoutput = chunk.split(',');
@@ -88,7 +92,7 @@ exports.PVoutputFullfilment = (request, response) => {
 
     switch (request.body.result.parameters.time.length) {
       case 0:
-        fetchInfo(app, 'getstatus');
+        fetchInfo(app, defaultOptions);
         break;
       case 8:
 
