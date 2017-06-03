@@ -79,8 +79,8 @@ exports.PVoutputFullfilment = (request, response) => {
             speech += PVmessagesDict[dataIntent[i]];
         }
         app.ask(speech);
-      })
-    })
+      });
+    });
   }
   let actionMap = new Map();
   actionMap.set(UNRECOGNIZED_DEEP_LINK, unrecognised);
@@ -88,4 +88,4 @@ exports.PVoutputFullfilment = (request, response) => {
 
   app.handleRequest(actionMap);
 
-}
+};
