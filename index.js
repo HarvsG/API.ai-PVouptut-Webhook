@@ -4,6 +4,7 @@
 process.env.DEBUG = 'actions-on-google:*';
 const ApiAiApp = require('actions-on-google').ApiAiApp;
 const https = require('https');
+const http = require('http');
 
 // API.AI actions
 const UNRECOGNIZED_DEEP_LINK = 'deeplink.unknown';
@@ -40,10 +41,10 @@ const NO_INPUTS = [
 exports.PVoutputFullfilment = (request, response) => {
   const app = new ApiAiApp({ request, response });
 
-  let requestHeader = JSON.stringify(request.headers);
-  console.log('Request headers: ' + requestHeader);
-  let requestBody = JSON.stringify(request.body);
-  console.log('Request body: ' + requestBody);
+  //let requestHeader = JSON.stringify(request.headers);
+  //console.log('Request headers: ' + requestHeader);
+  //let requestBody = JSON.stringify(request.body);
+  //console.log('Request body: ' + requestBody);
 
   function unrecognised (app) {
 
@@ -52,7 +53,7 @@ exports.PVoutputFullfilment = (request, response) => {
   function fetchInfo (app){
     var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
     var PVmessagesDict = {};
-    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi', function(PVres){
+    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey, function(PVres){
       PVres.setEncoding('utf8');
       PVres.on('data', function(chunk) {
         let PVoutput = chunk.split(',');
@@ -70,7 +71,7 @@ exports.PVoutputFullfilment = (request, response) => {
             "power":"The current power output is " + PVdict.power + " kilowatts. ",
             "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
 
-        var dataIntent = requestBody.result.parameters.PVoutputParameter;
+        var dataIntent = request.body.result.parameters.PVoutputParameter;
         var speech = "";
         for (var i = 0; i < dataIntent.length; i++) {
             speech += PVmessagesDict[dataIntent[i]];
