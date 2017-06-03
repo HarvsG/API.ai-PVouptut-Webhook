@@ -52,7 +52,7 @@ exports.PVoutputFullfilment = (request, response) => {
   function fetchInfo (app){
     var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
     var PVmessagesDict = {};
-    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid='+requestBody.result.parameters.SID+'&key='+requestBody.result.parameters.readOnlyAPIKey, function(PVres){
+    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi, function(PVres){
       PVres.setEncoding('utf8');
       PVres.on('data', function(chunk) {
         let PVoutput = chunk.split(',');
