@@ -50,41 +50,54 @@ exports.PVoutputFullfilment = (request, response) => {
 
   }
 
-  function fetchInfo (app){
-    var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
-    var PVmessagesDict = {};
-    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey, function(PVres){
-      PVres.setEncoding('utf8');
-      PVres.on('data', function(chunk) {
-        let PVoutput = chunk.split(',');
-        PVdict.date = PVoutput[0];
-        PVdict.time = PVoutput[1];
-        PVdict.energy = (PVoutput[2]/1000).toString();
-        PVdict.power = (PVoutput[3]/1000).toString();
-        PVdict.efficiency = (PVoutput[6]*100).toString();
+  function handler (app){
 
-        PVmessagesDict = {
-            "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
-            "date":"",
-            "time":"",
-            "energy": PVdict.energy + " kilowatt hours have been produced so far today. ",
-            "power":"The current power output is " + PVdict.power + " kilowatts. ",
-            "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
+    function fetchInfo (app, service, d="", t="", df="", dt="" ){
+      var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
+      var PVmessagesDict = {};
+      https.get('https://pvoutput.org/service/r2/'+service+'.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey, function(PVres){
+        PVres.setEncoding('utf8');
+        PVres.on('data', function(chunk) {
+          let PVoutput = chunk.split(',');
+          PVdict.date = PVoutput[0];
+          PVdict.time = PVoutput[1];
+          PVdict.energy = (PVoutput[2]/1000).toString();
+          PVdict.power = (PVoutput[3]/1000).toString();
+          PVdict.efficiency = (PVoutput[6]*100).toString();
 
-        //makes dataIntent equal to the parameters made but removes duplicates
-        let dataIntent = [...new Set(request.body.result.parameters.PVoutputParameter)];
+          PVmessagesDict = {
+              "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
+              "date":"",
+              "time":"",
+              "energy": PVdict.energy + " kilowatt hours have been produced so far today. ",
+              "power":"The current power output is " + PVdict.power + " kilowatts. ",
+              "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
 
-        var speech = "";
-        for (var i = 0; i < dataIntent.length; i++) {
-            speech += PVmessagesDict[dataIntent[i]];
-        }
-        app.ask(speech);
+          //makes dataIntent equal to the parameters made but removes duplicates
+          let dataIntent = [...new Set(request.body.result.parameters.PVoutputParameter)];
+
+          var speech = "";
+          for (var i = 0; i < dataIntent.length; i++) {
+              speech += PVmessagesDict[dataIntent[i]];
+          }
+          app.ask(speech);
+        });
       });
-    });
+    }
+
+
+    switch (request.body.result.parameters.time.length) {
+      case 0:
+        fetchInfo(app, 'getstatus')
+        break;
+      default:
+
+  }
+
   }
   let actionMap = new Map();
   actionMap.set(UNRECOGNIZED_DEEP_LINK, unrecognised);
-  actionMap.set(FETCH_INFO, fetchInfo);
+  actionMap.set(FETCH_INFO, handler);
 
   app.handleRequest(actionMap);
 
