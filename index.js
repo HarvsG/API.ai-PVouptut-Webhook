@@ -94,7 +94,6 @@ exports.PVoutputFullfilment = (request, response) => {
           key : request.body.result.parameters.readOnlyAPIKey,
         };
         let myQueryStringified = '?' + queryString.stringify(myQueryString);
-        console.log(myQueryStringified);
         fetchInfo(app, 'getstatus',myQueryStringified);
         break;
       case 8:
