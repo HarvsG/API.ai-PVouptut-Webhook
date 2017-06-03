@@ -71,7 +71,9 @@ exports.PVoutputFullfilment = (request, response) => {
             "power":"The current power output is " + PVdict.power + " kilowatts. ",
             "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
 
-        var dataIntent = request.body.result.parameters.PVoutputParameter;
+        //makes dataIntent equal to the parameters made but removes duplicates
+        let dataIntent = [...new Set(request.body.result.parameters.PVoutputParameter)];
+
         var speech = "";
         for (var i = 0; i < dataIntent.length; i++) {
             speech += PVmessagesDict[dataIntent[i]];
