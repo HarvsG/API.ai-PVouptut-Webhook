@@ -39,20 +39,20 @@ const NO_INPUTS = [
 
 exports.PVoutputFullfilment = (request, response) => {
   const app = new ApiAiApp({ request, response });
-  
+
   let requestHeader = JSON.stringify(request.headers);
   console.log('Request headers: ' + requestHeader);
   let requestBody = JSON.stringify(request.body);
   console.log('Request body: ' + requestBody);
-  
+
   function unrecognised (app) {
-    
+
   }
-  
+
   function fetchInfo (app){
     var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
     var PVmessagesDict = {};
-    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi, function(PVres){
+    https.get('https://pvoutput.org/service/r2/getstatus.jsp?sid=43392&key=solarharvey9kwapi', function(PVres){
       PVres.setEncoding('utf8');
       PVres.on('data', function(chunk) {
         let PVoutput = chunk.split(',');
@@ -78,11 +78,11 @@ exports.PVoutputFullfilment = (request, response) => {
         app.ask(speech);
       })
     })
-  
+  }
   let actionMap = new Map();
   actionMap.set(UNRECOGNIZED_DEEP_LINK, unrecognised);
   actionMap.set(FETCH_INFO, fetchInfo);
-  
+
   app.handleRequest(actionMap);
-  }
+
 }
