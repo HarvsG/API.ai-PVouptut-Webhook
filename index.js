@@ -88,9 +88,29 @@ exports.PVoutputFullfilment = (request, response) => {
 
     switch (request.body.result.parameters.time.length) {
       case 0:
-        fetchInfo(app, 'getstatus')
+        fetchInfo(app, 'getstatus');
+        break;
+      case 8:
+
+        break;
+      case 10:
+
+        break;
+      case 17:
+
+        break;
+      case 20:
+
+        break;
+      case 21:
+
+        break;
+      case 41:
+
         break;
       default:
+        fetchInfo(app, 'getstatus');
+        break;
 
   }
 
