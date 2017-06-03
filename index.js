@@ -40,9 +40,9 @@ const NO_INPUTS = [
 exports.PVoutputFullfilment = (request, response) => {
   const app = new ApiAiApp({ request, response });
   
-  let requestHeader = JSON.stringify(request.headers)
+  let requestHeader = JSON.stringify(request.headers);
   console.log('Request headers: ' + requestHeader);
-  let requestBody = JSON.stringify(request.body)
+  let requestBody = JSON.stringify(request.body);
   console.log('Request body: ' + requestBody);
   
   function unrecognised (app) {
