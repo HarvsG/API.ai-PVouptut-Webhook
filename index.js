@@ -15,7 +15,7 @@ const CATEGORY_ARGUMENT = 'category';
 
 // API.AI Contexts/lifespans
 const SOLAR = 'solar';
-const INFORMATION_GIVEN = 'information-given'
+const INFORMATION_GIVEN = 'information-given';
 const DEFAULT_LIFESPAN = 5;
 const END_LIFESPAN = 0;
 
