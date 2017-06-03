@@ -90,10 +90,11 @@ exports.PVoutputFullfilment = (request, response) => {
     switch (request.body.result.parameters.time.length) {
       case 0:
         let myQueryString = {
-          sid : request.body.result.parameters.PVoutputParameter.SID.SID,
-          key : request.body.result.parameters.PVoutputParameter.readOnlyAPIKey,
+          sid : request.body.result.parameters.SID.SID,
+          key : request.body.result.parameters.readOnlyAPIKey,
         };
-        let myQueryStringified = queryString.stringify(myQueryString);
+        let myQueryStringified = '?' + queryString.stringify(myQueryString);
+        console.log(myQueryStringified);
         fetchInfo(app, 'getstatus',myQueryStringified);
         break;
       case 8:
