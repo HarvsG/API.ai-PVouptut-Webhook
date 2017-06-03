@@ -5,6 +5,7 @@ process.env.DEBUG = 'actions-on-google:*';
 const ApiAiApp = require('actions-on-google').ApiAiApp;
 const https = require('https');
 const http = require('http');
+const queryString = require('query-string');
 
 // API.AI actions
 const UNRECOGNIZED_DEEP_LINK = 'deeplink.unknown';
@@ -51,15 +52,11 @@ exports.PVoutputFullfilment = (request, response) => {
   }
 
   function handler (app){
-    let defaultOptions = {
-      hostname: 'pvoutput.org',
-      path: '/service/r2/getstatus.jsp?sid='+request.body.result.parameters.SID.SID+'&key='+request.body.result.parameters.readOnlyAPIKey
-    }
 
-    function fetchInfo (app, options){
+    function fetchInfo (app, service, queryStringArg){
       var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
       var PVmessagesDict = {};
-      https.get(options, function(PVres){
+      https.get('https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg, function(PVres){
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
           let PVoutput = chunk.split(',');
@@ -92,7 +89,12 @@ exports.PVoutputFullfilment = (request, response) => {
 
     switch (request.body.result.parameters.time.length) {
       case 0:
-        fetchInfo(app, defaultOptions);
+        let myQueryString = {
+          sid : request.body.result.parameters.PVoutputParameter.SID.SID,
+          key : request.body.result.parameters.PVoutputParameter.readOnlyAPIKey,
+        };
+        let myQueryStringified = queryString.stringify(myQueryString);
+        fetchInfo(app, 'getstatus',myQueryStringified);
         break;
       case 8:
 
