@@ -70,8 +70,8 @@ exports.PVoutputFullfilment = (request, response) => {
               "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
               "date":"",
               "time":"",
-              "energy": PVdict.energy + " kilowatt hours have been produced so far today. ",
-              "power":"The current power output is " + PVdict.power + " kilowatts. ",
+              "energy": "As of "+ PVdict.time +" "+PVdict.energy + " kilowatt hours have been produced. ",
+              "power":"The power output as of " + PVdict.time + " was " + PVdict.power + " kilowatts. ",
               "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
 
           //makes dataIntent equal to the parameters made but removes duplicates
@@ -88,29 +88,55 @@ exports.PVoutputFullfilment = (request, response) => {
 
 
     switch (request.body.result.parameters.time.length) {
+      //no time specified
       case 0:
-        let myQueryString = {
+        let myQueryString0 = {
           sid : request.body.result.parameters.SID.SID,
           key : request.body.result.parameters.readOnlyAPIKey,
         };
-        let myQueryStringified = '?' + queryString.stringify(myQueryString);
-        fetchInfo(app, 'getstatus',myQueryStringified);
+        let myQueryStringified0 = '?' + queryString.stringify(myQueryString0);
+        fetchInfo(app, 'getstatus', myQueryStringified0);
         break;
+      //just time specified time: 17:30:00
       case 8:
+        //pvoutput api does not handle future times very well so we need to check of the time is recent, if it is we will set t to an empty string
+        var time1 = request.body.result.parameters.time.slice(0,5);
 
+        let serverDate = new Date();
+        var requestDate = new Date();
+        requestDate.setHours(parseInt(time1.slice(0,2)));
+        requestDate.setMinutes(parseInt(time1.slice(3)));
+
+        let timeLag = serverDate.getTime() - requestDate.getTime()
+        if (timeLag <= 600000) {
+          time1 = '';
+        }
+
+        let myQueryString1 = {
+        sid : request.body.result.parameters.SID.SID,
+        key : request.body.result.parameters.readOnlyAPIKey,
+        t : time1
+        };
+        let myQueryStringified1 = '?' + queryString.stringify(myQueryString1);
+        fetchInfo(app, 'getstatus',myQueryStringified1);
         break;
+      // just date specified in the format of time: 2014-08-09
       case 10:
 
         break;
+      //time periods: 13:30:00/14:30:00
       case 17:
 
         break;
+      //combined date&time: 2014-08-09T16:30:00Z
       case 20:
 
         break;
+      //date periods: 2014-01-01/2014-12-31
       case 21:
 
         break;
+      //combined date&time period: 2017-02-08T08:00:00Z/2017-02-08T12:00:00Z
       case 41:
 
         break;
