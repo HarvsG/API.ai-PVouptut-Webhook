@@ -70,7 +70,7 @@ exports.PVoutputFullfilment = (request, response) => {
               "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
               "date":"",
               "time":"",
-              "energy": "As of "+ PVdict.time +" "+PVdict.energy + " kilowatt hours have been produced. ",
+              "energy": "As of "+ PVdict.time +" today. "+PVdict.energy + " kilowatt hours had been produced. ",
               "power":"The power output as of " + PVdict.time + " was " + PVdict.power + " kilowatts. ",
               "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
 
