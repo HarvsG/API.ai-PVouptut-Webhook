@@ -38,6 +38,13 @@ const NO_INPUTS = [
   'If you\'re still there, say that again.',
   'We can stop here. See you soon.'
 ];
+function convertDate (startDate) {
+  var year = startDate.substring(0, 4);
+  var month = startDate.substring(4, 6);
+  var day = startDate.substring(6, 8);
+
+  return year + '-' + month + '-' + day;
+}
 
 exports.PVoutputFullfilment = (request, response) => {
   const app = new ApiAiApp({ request, response });
@@ -68,10 +75,10 @@ exports.PVoutputFullfilment = (request, response) => {
               PVdict.energy = (PVoutput[2]/1000).toString();
               PVdict.power = (PVoutput[3]/1000).toString();
               PVdict.efficiency = (PVoutput[6]*100).toString();
-              var now = new Date();
-              var today = now.toISOString().replace('-','').slice(0,8);
-              var dateString0 = " on " + PVdict.date + ". ";
-              if (PVdict.date == today) {
+              var today = new Date();
+              var date = new Date(convertDate(PVdict.date));
+              var dateString0 = " on " + date.toDateString() + ". ";
+              if (date.toDateString() == today.toDateString()) {
                 dateString0 = " today. ";
               }
               PVmessagesDict = {
@@ -83,21 +90,23 @@ exports.PVoutputFullfilment = (request, response) => {
             case "getstatistic":
               PVdict.energy = (PVoutput[0]/1000).toString();
               PVdict.energyExported = (PVoutput[1]/1000).toString();
-              PVdict.power = (PVoutput[2]/1000).toString();
-              PVdict.maxPower = (PVoutput[4]/1000).toString();
+              PVdict.averageEnergy= (PVoutput[2]/1000).toString();
+              PVdict.maxEnergy = (PVoutput[4]/1000).toString();
               PVdict.efficiency = (PVoutput[5]*100).toString();
               PVdict.recordEfficiency = (PVoutput[9]*100).toString();
               PVdict.fromDate = PVoutput[7];
+              let fromDate = new Date(convertDate(PVdict.fromDate));
               PVdict.toDate = PVoutput[8];
-              var dateString1 = "between " + PVdict.fromDate + " and " + PVdict.toDate;
+              let toDate = new Date(convertDate(PVdict.toDate));
+              var dateString1 = "between " + fromDate.toDateString() + " and " + toDate.toDateString();
               if (PVdict.fromDate == PVdict.toDate) {
-                dateString1 = "on "+ PVdict.fromDate;
+                dateString1 = "on "+ fromDate.toDateString();
               }
               PVmessagesDict = {
                   "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
                   "energy": PVdict.energy + " kilowatt hours were produced " + dateString1,
-                  "power":"The average power output " + dateString1 + " was " + PVdict.power + " kilowatts. ",
-                  "maximumPower" : "The maximum power output " + dateString1 + " was " + PVdict.power + " kilowatts. ",
+                  "power":"The average power output " + dateString1 + " was " +  " kilowatts. ",
+                  "maximumPower" : "The maximum power output " + dateString1 + " was " +  " kilowatts. ",
                   "efficiency":"The average efficiency of the solar array "+ dateString1 +" was  " + PVdict.efficiency + " percent of capacity. "};
               break;
             default:
