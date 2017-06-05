@@ -94,6 +94,8 @@ exports.PVoutputFullfilment = (request, response) => {
               PVdict.maxEnergy = (PVoutput[4]/1000).toString();
               PVdict.efficiency = (PVoutput[5]*100).toString();
               PVdict.recordEfficiency = (PVoutput[9]*100).toString();
+              PVdict.recordDate = PVoutput[10];
+              let recordDate = new Date(convertDate(PVdict.recordDate));
               PVdict.fromDate = PVoutput[7];
               let fromDate = new Date(convertDate(PVdict.fromDate));
               PVdict.toDate = PVoutput[8];
@@ -105,8 +107,9 @@ exports.PVoutputFullfilment = (request, response) => {
               PVmessagesDict = {
                   "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
                   "energy": PVdict.energy + " kilowatt hours were produced " + dateString1,
-                  "power":"The average power output " + dateString1 + " was " +  " kilowatts. ",
-                  "maximumPower" : "The maximum power output " + dateString1 + " was " +  " kilowatts. ",
+                  "power":"I am sorry I cant tell you about power output in a date range. ",
+                  "averageEnergy":"The average daily energy production " + dateString1 + " was " + PVdict.averageEnergy,
+                  "maxEnergy":"The maximum daily energy production " + dateString1 + " was " + PVdict.averageEnergy + ", recorded on "+recordDate.toDateString(),
                   "efficiency":"The average efficiency of the solar array "+ dateString1 +" was  " + PVdict.efficiency + " percent of capacity. "};
               break;
             default:
