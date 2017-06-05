@@ -108,8 +108,8 @@ exports.PVoutputFullfilment = (request, response) => {
                   "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
                   "energy": PVdict.energy + " kilowatt hours were produced " + dateString1,
                   "power":"I am sorry I cant tell you about power output in a date range. ",
-                  "averageEnergy":"The average daily energy production " + dateString1 + " was " + PVdict.averageEnergy,
-                  "maxEnergy":"The maximum daily energy production " + dateString1 + " was " + PVdict.averageEnergy + ", recorded on "+recordDate.toDateString(),
+                  "averageEnergy":"The average daily energy production " + dateString1 + " was " + PVdict.averageEnergy + " kilowatt hours",
+                  "maxEnergy":"The maximum daily energy production " + dateString1 + " was " + PVdict.maxEnergy + " kilowatt hours, recorded on "+recordDate.toDateString(),
                   "efficiency":"The average efficiency of the solar array "+ dateString1 +" was  " + PVdict.efficiency + " percent of capacity. "};
               break;
             default:
