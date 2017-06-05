@@ -57,6 +57,7 @@ exports.PVoutputFullfilment = (request, response) => {
       var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
       var PVmessagesDict = {};
       https.get('https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg, function(PVres){
+        console.log('sending: https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg);
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
           let PVoutput = chunk.split(',');
@@ -146,7 +147,7 @@ exports.PVoutputFullfilment = (request, response) => {
         break;
       // just date specified in the format of time: 2014-08-09
       case 10:
-        let formattedDate = request.body.result.parameters.time.replace(':','');
+        let formattedDate = request.body.result.parameters.time.replace(/-/g,'');
         myQueryString.dt = formattedDate;
         myQueryString.df = formattedDate;
 
@@ -159,7 +160,8 @@ exports.PVoutputFullfilment = (request, response) => {
         break;
       //combined date&time: 2014-08-09T16:30:00Z
       case 20:
-        let formattedDateTime = request.body.result.parameters.time.replace('-','').split('T');
+        let formattedDateTime = request.body.result.parameters.time.replace(/-/g,'').split('T');
+
         formattedDateTime[1] = formattedDateTime[1].slice(0,5);
 
         myQueryString.d = formattedDateTime[0];
@@ -170,11 +172,13 @@ exports.PVoutputFullfilment = (request, response) => {
         break;
       //date periods: 2014-01-01/2014-12-31
       case 21:
-        let formattedDateRange = request.body.result.parameters.time.replace(':','').split('/');
-        myQueryString.dt = formattedDateRange[0];
-        myQueryString.df = formattedDateRange[1];
+        let formattedDateRange = request.body.result.parameters.time.replace(/-/g,'').split('/');
+
+        myQueryString.df = formattedDateRange[0];
+        myQueryString.dt = formattedDateRange[1];
 
         let myQueryStringified5 = '?' + queryString.stringify(myQueryString);
+
         fetchInfo(app, 'getstatistic',myQueryStringified5);
         break;
       //combined date&time period: 2017-02-08T08:00:00Z/2017-02-08T12:00:00Z
