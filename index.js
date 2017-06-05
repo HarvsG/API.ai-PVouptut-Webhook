@@ -60,20 +60,46 @@ exports.PVoutputFullfilment = (request, response) => {
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
           let PVoutput = chunk.split(',');
-          PVdict.date = PVoutput[0];
-          PVdict.time = PVoutput[1];
-          PVdict.energy = (PVoutput[2]/1000).toString();
-          PVdict.power = (PVoutput[3]/1000).toString();
-          PVdict.efficiency = (PVoutput[6]*100).toString();
+          switch (service) {
+            case "getstatus":
+              PVdict.date = PVoutput[0];
+              PVdict.time = PVoutput[1];
+              PVdict.energy = (PVoutput[2]/1000).toString();
+              PVdict.power = (PVoutput[3]/1000).toString();
+              PVdict.efficiency = (PVoutput[6]*100).toString();
+              PVmessagesDict = {
+                  "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
+                  "date":"",
+                  "time":"",
+                  "energy": "As of "+ PVdict.time +" today. "+ PVdict.energy + " kilowatt hours had been produced. ",
+                  "power":"The power output as of " + PVdict.time + " was " + PVdict.power + " kilowatts. ",
+                  "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
+              break;
+            case "getstatistic":
+              PVdict.energy = (PVoutput[0]/1000).toString();
+              PVdict.energyExported = (PVoutput[1]/1000).toString();
+              PVdict.power = (PVoutput[2]/1000).toString();
+              PVdict.maxPower = (PVoutput[4]/1000).toString();
+              PVdict.efficiency = (PVoutput[5]*100).toString();
+              PVdict.recordEfficiency = (PVoutput[9]*100).toString();
+              PVdict.fromDate = PVoutput[7];
+              PVdict.toDate = PVoutput[8];
+              var dateString = "between " + PVdict.fromDate + " and " + PVdict.toDate;
+              if (PVdict.fromDate == PVdict.toDate) {
+                dateString = "on "+ PVdict.fromDate;
+              }
+              PVmessagesDict = {
+                  "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
+                  "date":"",
+                  "time":"",
+                  "energy": PVdict.energy + " kilowatt hours were produced " + dateString,
+                  "power":"The average power output " + dateString + " was " + PVdict.power + " kilowatts. ",
+                  "maximumPower" : "The maximum power output " + dateString + " was " + PVdict.power + " kilowatts. ",
+                  "efficiency":"The average efficiency of the solar array "+ dateString +" was  " + PVdict.efficiency + " percent of capacity. "};
+              break;
+            default:
 
-          PVmessagesDict = {
-              "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
-              "date":"",
-              "time":"",
-              "energy": "As of "+ PVdict.time +" today. "+PVdict.energy + " kilowatt hours had been produced. ",
-              "power":"The power output as of " + PVdict.time + " was " + PVdict.power + " kilowatts. ",
-              "efficiency":"The solar array is currently outputting at  " + PVdict.efficiency + " percent of capacity. "};
-
+          }
           //makes dataIntent equal to the parameters made but removes duplicates
           let dataIntent = [...new Set(request.body.result.parameters.PVoutputParameter)];
 
@@ -86,15 +112,15 @@ exports.PVoutputFullfilment = (request, response) => {
       });
     }
 
+    var myQueryString = {
+    sid : request.body.result.parameters.SID.SID,
+    key : request.body.result.parameters.readOnlyAPIKey,
+    };
 
     switch (request.body.result.parameters.time.length) {
       //no time specified
       case 0:
-        let myQueryString0 = {
-          sid : request.body.result.parameters.SID.SID,
-          key : request.body.result.parameters.readOnlyAPIKey,
-        };
-        let myQueryStringified0 = '?' + queryString.stringify(myQueryString0);
+        let myQueryStringified0 = '?' + queryString.stringify(myQueryString);
         fetchInfo(app, 'getstatus', myQueryStringified0);
         break;
       //just time specified time: 17:30:00
@@ -109,24 +135,31 @@ exports.PVoutputFullfilment = (request, response) => {
 
         let timeLag = serverDate.getTime() - requestDate.getTime()
         if (timeLag <= 600000) {
-          time1 = '';
+          myQueryString.t = '';
+        } else {
+          myQueryString.t = time1;
         }
-
-        let myQueryString1 = {
-        sid : request.body.result.parameters.SID.SID,
-        key : request.body.result.parameters.readOnlyAPIKey,
-        t : time1
-        };
-        let myQueryStringified1 = '?' + queryString.stringify(myQueryString1);
+        let myQueryStringified1 = '?' + queryString.stringify(myQueryString);
         fetchInfo(app, 'getstatus',myQueryStringified1);
         break;
       // just date specified in the format of time: 2014-08-09
       case 10:
+        let formattedDate = request.body.result.parameters.time.replace(':','');
+        myQueryString.dt = formattedDate;
+        myQueryString.df = formattedDate;
 
+        let myQueryStringified2 = '?' + queryString.stringify(myQueryString);
+        fetchInfo(app, 'getstatistic',myQueryStringified2);
         break;
       //time periods: 13:30:00/14:30:00
       case 17:
-
+        let myQueryString3 = {
+        sid : request.body.result.parameters.SID.SID,
+        key : request.body.result.parameters.readOnlyAPIKey,
+        t : time1
+        };
+        let myQueryStringified3 = '?' + queryString.stringify(myQueryString3);
+        fetchInfo(app, 'getstatistic',myQueryStringified3);
         break;
       //combined date&time: 2014-08-09T16:30:00Z
       case 20:
