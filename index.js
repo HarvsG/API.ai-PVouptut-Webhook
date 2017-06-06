@@ -77,15 +77,15 @@ exports.PVoutputFullfilment = (request, response) => {
               PVdict.efficiency = (PVoutput[6]*100).toString();
               var today = new Date();
               var date = new Date(convertDate(PVdict.date));
-              var dateString0 = " on " + date.toDateString() + ". ";
+              var dateString0 = " on " + date.toDateString();
               if (date.toDateString() == today.toDateString()) {
-                dateString0 = " today. ";
+                dateString0 = " today";
               }
               PVmessagesDict = {
                   "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
                   "energy": "As of "+ PVdict.time + dateString0 + PVdict.energy + " kilowatt hours had been produced. ",
                   "power":"The power output as of " + PVdict.time + dateString0 + " was " + PVdict.power + " kilowatts. ",
-                  "efficiency": "As of "+ PVdict.time + dateString0 +"The solar array was outputting at  " + PVdict.efficiency + " percent of capacity. "};
+                  "efficiency": "As of "+ PVdict.time + dateString0 +" the solar array was outputting at  " + PVdict.efficiency + " percent of capacity. "};
               break;
             case "getstatistic":
               PVdict.energy = (PVoutput[0]/1000).toString();
