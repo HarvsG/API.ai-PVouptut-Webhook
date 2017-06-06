@@ -27,7 +27,7 @@
   },
   "defaultTimezone": "Europe/Madrid",
   "webhook": {
-    "url": "https://simple-demo-webhook.herokuapp.com/hook",
+    "url": "https://us-central1-pvoutput-ai.cloudfunctions.net/PVoutputFullfilment",
     "headers": {
       "": ""
     },

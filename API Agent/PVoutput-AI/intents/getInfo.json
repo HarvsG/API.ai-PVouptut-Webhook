@@ -1,6 +1,619 @@
 {
   "userSays": [
     {
+      "id": "016e9ae1-b214-459f-b4b9-2ad37a7d84b2",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 15:00",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d2adc343-8e09-4f3d-8ac7-261585236bd6",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 3 p.m.",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "877c313f-9745-4e28-8eb8-dfe24360ef87",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "solar",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 4 p.m.",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b34070de-215b-4442-a73f-10242bd50e69",
+      "data": [
+        {
+          "text": "What was the "
+        },
+        {
+          "text": "best day",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "last week",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "01e69703-d53a-4603-996a-9c03555418e6",
+      "data": [
+        {
+          "text": "What was the "
+        },
+        {
+          "text": "efficiency",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " of "
+        },
+        {
+          "text": "the solar panels",
+          "alias": "object",
+          "meta": "@object",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "yesterday",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "fc7310ce-5cb9-43d5-a47c-d63817ac4bbf",
+      "data": [
+        {
+          "text": "What was the average "
+        },
+        {
+          "text": "efficiency",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "yesterday",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "120b52d4-3a00-40b3-9b86-7e853bb4d8b0",
+      "data": [
+        {
+          "text": "How much "
+        },
+        {
+          "text": "have we generated",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "in last seven days",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "bee818ce-d63e-471f-bd97-8a2373dfdac0",
+      "data": [
+        {
+          "text": "How much have we "
+        },
+        {
+          "text": "generated",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": true
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "over the last week",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "71fa49d2-6903-4caa-a0b3-787f531bbeed",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 12:30",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1968b83c-437e-4b43-9f56-d22d9301abaf",
+      "data": [
+        {
+          "text": "how much did we "
+        },
+        {
+          "text": "generate",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "last week",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "15a5a9b0-8f4c-42f9-ae13-45a09089bfab",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " did we "
+        },
+        {
+          "text": "produce",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "last tuesday",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "25fe5bf4-6777-4a3c-b544-eb16bc3c8bf7",
+      "data": [
+        {
+          "text": "How much @PVoutputParameter:PVoutputParameter  had we generated as of @sys.date-time:time"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0
+    },
+    {
+      "id": "e4630904-838a-4594-97ec-f2554d05e8cc",
+      "data": [
+        {
+          "text": "How much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "had we generated",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " as of "
+        },
+        {
+          "text": "1600",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3ed8b2e1-badd-4701-856a-26c691e2ec9c",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "had we generated",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " as of "
+        },
+        {
+          "text": "1230",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "11dc14c3-d774-4126-b2bf-0c23cf96ed4a",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "had we generated",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " as of "
+        },
+        {
+          "text": "12:30",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "208c8794-02e1-4507-835f-e41fc5d466c8",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "power",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " was being "
+        },
+        {
+          "text": "produced",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 12",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dc21e89e-1578-4fc3-b945-18aa1a70dafa",
+      "data": [
+        {
+          "text": "how much were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 4 p.m.",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1af0c989-68c0-4dd0-9f22-554764680bd4",
+      "data": [
+        {
+          "text": "how much were we "
+        },
+        {
+          "text": "generating",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "at 2 p.m.",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "abcef61b-7e05-43d9-a6a8-779e4eeed05e",
+      "data": [
+        {
+          "text": "how much are we "
+        },
+        {
+          "text": "producing",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "right now",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": true
+        },
+        {
+          "text": "?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "640e4b7e-d491-4b55-bc0e-85804d51b1d8",
+      "data": [
+        {
+          "text": "how much "
+        },
+        {
+          "text": "energy",
+          "alias": "PVoutputParameter",
+          "meta": "@PVoutputParameter",
+          "userDefined": false
+        },
+        {
+          "text": " did we "
+        },
+        {
+          "text": "generate",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "last week",
+          "alias": "time",
+          "meta": "@sys.date-time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
       "id": "e9fbf1fd-b4da-4be2-8cdd-2946a8165d1f",
       "data": [
         {
@@ -27,7 +640,7 @@
         {
           "text": "right now",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -63,7 +676,7 @@
         {
           "text": "this month",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         }
       ],
@@ -97,7 +710,7 @@
         {
           "text": "yesterday",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         }
       ],
@@ -122,7 +735,7 @@
         {
           "text": "last week",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -141,7 +754,7 @@
         {
           "text": "current",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -193,7 +806,7 @@
         {
           "text": "today",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -230,7 +843,7 @@
         {
           "text": "currently",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -266,7 +879,7 @@
         {
           "text": "today",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         },
         {
@@ -311,7 +924,7 @@
         {
           "text": "right now",
           "alias": "time",
-          "meta": "@time",
+          "meta": "@sys.date-time",
           "userDefined": false
         }
       ],
@@ -375,25 +988,15 @@
           "isList": false
         },
         {
-          "dataType": "@time",
+          "dataType": "@sys.date-time",
           "name": "time",
           "value": "$time",
+          "prompts": [],
           "isList": false
         },
         {
           "name": "my_action",
           "value": "fetch.info"
-        },
-        {
-          "required": true,
-          "dataType": "@SID",
-          "name": "SID",
-          "value": "$SID",
-          "prompts": [
-            "What is your system identification number?",
-            "Please can I have your 5 digit system identification number?"
-          ],
-          "defaultValue": "#SID-key-given.SID"
         },
         {
           "required": true,
@@ -405,6 +1008,17 @@
             "Please may I have your read only API Key?"
           ],
           "defaultValue": "#ReadOnlyAPIKey-given.readOnlyAPIKey"
+        },
+        {
+          "required": true,
+          "dataType": "@SID",
+          "name": "SID",
+          "value": "$SID",
+          "prompts": [
+            "What is your system identification number?",
+            "Please can I have your 5 digit system identification number?"
+          ],
+          "defaultValue": "#SID-key-given.SID"
         }
       ],
       "messages": [

@@ -23,10 +23,12 @@
       "synonyms": [
         "energy",
         "kilowatt hour",
-        "generated",
         "have we generated",
         "produced",
-        "produce"
+        "produce",
+        "did we generate",
+        "generate",
+        "generated"
       ]
     },
     {
@@ -34,6 +36,24 @@
       "synonyms": [
         "efficiency",
         "percentage"
+      ]
+    },
+    {
+      "value": "averageEnergy",
+      "synonyms": [
+        "averageEnergy",
+        "average production",
+        "average energy production"
+      ]
+    },
+    {
+      "value": "maxEnergy",
+      "synonyms": [
+        "maxEnergy",
+        "maximum produced",
+        "maximum energy production",
+        "best day",
+        "peak day"
       ]
     }
   ],

@@ -228,6 +228,9 @@
           "type": 0,
           "speech": "Thank you, I got that as $readOnlyAPIKey, does that sound right?"
         }
+      ],
+      "defaultResponsePlatforms": [
+        "google"
       ]
     }
   ],
