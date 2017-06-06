@@ -64,7 +64,7 @@ exports.PVoutputFullfilment = (request, response) => {
       var PVdict = {"date":"","time":"","energy":"","power":"","efficiency":""};
       var PVmessagesDict = {};
       https.get('https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg, function(PVres){
-        console.log('sending: https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg);
+        //console.log('sending: https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg);
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
           let PVoutput = chunk.split(',');
