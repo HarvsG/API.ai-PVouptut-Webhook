@@ -39,7 +39,7 @@ deploy:
   - provider: script
     script:
       # change PROJECT and REPO to the values from the cloud console: https://console.cloud.google.com/code/develop
-      - gcloud --quiet beta functions deploy pvoutput-ai-function-fullfilment  --source-url https://source.developers.google.com/p/pvoutput-ai/r/pvoutput-google-source-repo --source-path / --trigger-http
+      - gcloud --quiet beta functions deploy PVoutputFullfilment  --source-url https://source.developers.google.com/p/pvoutput-ai/r/pvoutput-google-source-repo --source-path / --trigger-http
     skip_cleanup: true
     on:
       branch: master
