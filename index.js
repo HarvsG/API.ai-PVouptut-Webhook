@@ -104,7 +104,8 @@ exports.PVoutputFullfilment = (request, response) => {
           switch (service) {
             case "getstatus":
               PVdict.date = PVoutput[0];
-              PVdict.time = PVoutput[1];
+              PVdict.time = (parseInt(PVoutput[1].slice(0,2)) % 12) + ':' + PVoutput[1].slice(3) +
+                ( (parseInt(PVoutput[1].slice(0,2)) ) < 12 ? 'AM' : 'PM' );
               PVdict.energy = (PVoutput[2]/1000).toString();
               PVdict.power = (PVoutput[3]/1000).toString();
               PVdict.efficiency = (PVoutput[6]*100).toString();
