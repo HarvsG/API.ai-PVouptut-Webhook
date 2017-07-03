@@ -80,7 +80,7 @@ exports.PVoutputFullfilment = (request, response) => {
                 app.setContext(SID_GIVEN,0);
                 app.setContext(SID_REQUIRED,99);
                 app.setContext(WELCOME,0)
-                app.setContext(SOLAR,0,{'APIRequired':'Now how can I help?'})
+                app.setContext(SOLAR,99,{'APIRequired':'Now how can I help?'})
                 app.ask('Unfortunately your System Identification number was incorrect, please say it again.');
                 break
               case "Invalid API Key":
