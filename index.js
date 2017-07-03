@@ -90,7 +90,7 @@ exports.PVoutputFullfilment = (request, response) => {
                 app.setContext(API_KEY_REQUIRED,99);
                 app.setContext(SID_GIVEN,0);
                 app.setContext(SID_REQUIRED,99);
-                app.ask('Unfortunately there was an error with your credentials, please give your SID again.');
+                app.ask('Unfortunately there was an error with your credentials, please give your System Identification number again.');
                 break
             }
             return
