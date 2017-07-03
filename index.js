@@ -16,6 +16,10 @@ const FETCH_INFO = 'fetch.info';
 const CATEGORY_ARGUMENT = 'category';
 
 // API.AI Contexts/lifespans
+const SID_REQUIRED = 'SID-key-required';
+const SID_GIVEN = 'SID-key-given';
+const API_KEY_REQUIRED = 'ReadOnlyKey-required';
+const API_GIVEN = 'ReadOnlyAPIKey-given';
 const SOLAR = 'solar';
 const INFORMATION_GIVEN = 'information-given';
 const DEFAULT_LIFESPAN = 5;
@@ -67,7 +71,31 @@ exports.PVoutputFullfilment = (request, response) => {
         //console.log('sending: https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg);
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
-          console.log(chunk);
+          
+          if (chunk.slice(0, 16) == "Unauthorized 401") {
+            switch (chunk.slice(18)){
+              case "Missing, invalid or inactive api key information (X-Pvoutput-Apikey)":
+              case "Invalid System ID":
+                app.setContext(SID_GIVEN,0);
+                app.setContext(SID_REQUIRED,99);
+                app.ask('Unfortunately your System Identification number was incorrect, please say it again.');
+                break
+              case "Invalid API Key":
+                app.setContext(API_GIVEN,0);
+                app.setContext(API_KEY_REQUIRED,99);
+                app.ask('Unfortunately your API Key number was incorrect, please say it again.');
+                break
+              default:
+                app.setContext(API_GIVEN,0);
+                app.setContext(API_KEY_REQUIRED,99);
+                app.setContext(SID_GIVEN,0);
+                app.setContext(SID_REQUIRED,99);
+                app.ask('Unfortunately there was an error with your credentials, please give your SID again.');
+                break
+            }
+            return
+          } 
+          
           let PVoutput = chunk.split(',');
           switch (service) {
             case "getstatus":
@@ -123,6 +151,8 @@ exports.PVoutputFullfilment = (request, response) => {
           for (var i = 0; i < dataIntent.length; i++) {
               speech += PVmessagesDict[dataIntent[i]];
           }
+          app.setContext(SID_GIVEN,99)
+          app.setContext(API_GIVEN,99)
           app.ask(speech);
         });
       });
