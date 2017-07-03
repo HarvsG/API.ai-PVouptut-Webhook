@@ -67,6 +67,7 @@ exports.PVoutputFullfilment = (request, response) => {
         //console.log('sending: https://pvoutput.org/service/r2/'+service+'.jsp' + queryStringArg);
         PVres.setEncoding('utf8');
         PVres.on('data', function(chunk) {
+          console.log(chunk);
           let PVoutput = chunk.split(',');
           switch (service) {
             case "getstatus":
