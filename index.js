@@ -105,7 +105,7 @@ exports.PVoutputFullfilment = (request, response) => {
             case "getstatus":
               PVdict.date = PVoutput[0];
               let hour = parseInt(PVoutput[1].slice(0,2));
-              let minute = parseInt(PVoutput[1].slice(3));
+              let minute = PVoutput[1].slice(3);
               PVdict.time = (hour == 12 ? hour : hour % 12) + ':' + minute +
                 (hour < 12 ? 'AM' : 'PM');
               PVdict.energy = (PVoutput[2]/1000).toString();
