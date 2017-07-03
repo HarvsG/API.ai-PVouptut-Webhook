@@ -107,7 +107,7 @@ exports.PVoutputFullfilment = (request, response) => {
               let hour = parseInt(PVoutput[1].slice(0,2));
               let minute = PVoutput[1].slice(3);
               PVdict.time = (hour == 12 ? hour : hour % 12) + ':' + minute +
-                (hour < 12 ? 'AM' : 'PM');
+                (hour < 12 ? 'AM' : hour == 12 ? 'Noon' : 'PM');
               PVdict.energy = (PVoutput[2]/1000).toString();
               PVdict.power = (PVoutput[3]/1000).toString();
               PVdict.efficiency = (PVoutput[6]*100).toString();
