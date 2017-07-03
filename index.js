@@ -16,6 +16,7 @@ const FETCH_INFO = 'fetch.info';
 const CATEGORY_ARGUMENT = 'category';
 
 // API.AI Contexts/lifespans
+const WELCOME = 'welcome';
 const SID_REQUIRED = 'SID-key-required';
 const SID_GIVEN = 'SID-key-given';
 const API_KEY_REQUIRED = 'ReadOnlyKey-required';
@@ -78,18 +79,20 @@ exports.PVoutputFullfilment = (request, response) => {
               case "Invalid System ID":
                 app.setContext(SID_GIVEN,0);
                 app.setContext(SID_REQUIRED,99);
+                app.setContext(WELCOME,0)
                 app.ask('Unfortunately your System Identification number was incorrect, please say it again.');
                 break
               case "Invalid API Key":
                 app.setContext(API_GIVEN,0);
                 app.setContext(API_KEY_REQUIRED,99);
-                app.ask('Unfortunately your API Key number was incorrect, please say it again.');
+                app.ask('Unfortunately your API Key was incorrect, please say it again.');
                 break
               default:
                 app.setContext(API_GIVEN,0);
                 app.setContext(API_KEY_REQUIRED,99);
                 app.setContext(SID_GIVEN,0);
                 app.setContext(SID_REQUIRED,99);
+                app.setContext(WELCOME,0)
                 app.ask('Unfortunately there was an error with your credentials, please give your System Identification number again.');
                 break
             }
