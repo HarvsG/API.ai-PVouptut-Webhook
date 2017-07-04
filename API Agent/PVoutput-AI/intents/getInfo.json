@@ -955,16 +955,6 @@
           "name": "array-information-given",
           "parameters": {},
           "lifespan": 99
-        },
-        {
-          "name": "SID-key-given",
-          "parameters": {},
-          "lifespan": 99
-        },
-        {
-          "name": "ReadOnlyAPIKey-given",
-          "parameters": {},
-          "lifespan": 99
         }
       ],
       "parameters": [

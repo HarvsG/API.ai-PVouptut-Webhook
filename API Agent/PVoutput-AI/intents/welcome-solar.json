@@ -91,6 +91,11 @@
           "name": "ReadOnlyKey-required",
           "parameters": {},
           "lifespan": 99
+        },
+        {
+          "name": "welcome",
+          "parameters": {},
+          "lifespan": 15
         }
       ],
       "parameters": [
@@ -99,6 +104,14 @@
           "name": "object",
           "value": "$object",
           "isList": false
+        },
+        {
+          "required": false,
+          "dataType": "",
+          "name": "APIRequired",
+          "value": "$APIRequired",
+          "prompts": [],
+          "defaultValue": "Next I will need your read only API key"
         }
       ],
       "messages": [

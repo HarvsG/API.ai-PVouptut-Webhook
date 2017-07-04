@@ -179,6 +179,11 @@
           "name": "give-SID-followup",
           "parameters": {},
           "lifespan": 0
+        },
+        {
+          "name": "give-SID-yes-followup",
+          "parameters": {},
+          "lifespan": 2
         }
       ],
       "parameters": [
@@ -186,15 +191,16 @@
           "required": true,
           "dataType": "@SID",
           "name": "SID",
-          "value": "#give-SID-followup.SID"
+          "value": "#give-SID-followup.SID",
+          "prompts": []
         }
       ],
       "messages": [
         {
           "type": 0,
           "speech": [
-            "Brilliant, now what is your read-only API key?",
-            "Good, now I will need your read-only API Key."
+            "Good. #solar.APIRequired",
+            "Brilliant. #solar.APIRequired"
           ]
         }
       ]
