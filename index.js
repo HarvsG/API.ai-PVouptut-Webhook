@@ -107,7 +107,7 @@ exports.PVoutputFullfilment = (request, response) => {
               let hour = parseInt(PVoutput[1].slice(0,2));
               let minute = PVoutput[1].slice(3);
               PVdict.time = (hour == 12 ? hour : hour % 12) + ':' + minute +
-                (hour < 12 ? 'AM' : hour == 12 ? 'Noon' : 'PM');
+                (hour < 12 ? 'AM' : hour == 12 ? ' Noon' : 'PM');
               PVdict.energy = (PVoutput[2]/1000).toString();
               PVdict.power = (PVoutput[3]/1000).toString();
               PVdict.efficiency = (PVoutput[6]*100).toString();
@@ -120,7 +120,7 @@ exports.PVoutputFullfilment = (request, response) => {
               PVmessagesDict = {
                   "":"I am sorry please ask again but specify if you want information about power, energy or efficiency. ",
                   "energy": "As of "+ PVdict.time + dateString0 + PVdict.energy + " kilowatt-hours had been produced. ",
-                  "power":"The power output as of " + PVdict.time + dateString0 + "was " + PVdict.power + " kilowatts. ",
+                  "power":"The power output as of " + PVdict.time + dateString0 + " was " + PVdict.power + " kilowatts. ",
                   "efficiency": "As of "+ PVdict.time + dateString0 +"the solar array was outputting at " + PVdict.efficiency + " percent of capacity. "};
               break;
             case "getstatistic":
